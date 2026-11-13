@@ -77,7 +77,7 @@ export default function Home() {
   }
 
   return (
-    <div className="xl:h-screen w-full flex p-2 bg-[#e2cfc8] flex-col xl:flex-row border-2 border-red-900">
+    <div className="xl:h-screen w-full flex p-2 bg-[#e2cfc8] flex-col xl:flex-row">
       <div className="h-auto xl:h-full w-full xl:w-1/2 bg-[#FFFEFF] px-[40px] py-[25px] flex flex-col gap-[50px]">
         {/* FD title */}
         <div>

@@ -77,8 +77,8 @@ export default function Home() {
   }
 
   return (
-    <div className="h-screen w-screen flex p-2 bg-[#e2cfc8]">
-      <div className="h-full w-[50%] bg-[#FFFEFF] px-[40px] py-[25px] flex flex-col gap-[50px]">
+    <div className="xl:h-screen w-full flex p-2 bg-[#e2cfc8] flex-col xl:flex-row border-2 border-red-900">
+      <div className="h-auto xl:h-full w-full xl:w-1/2 bg-[#FFFEFF] px-[40px] py-[25px] flex flex-col gap-[50px]">
         {/* FD title */}
         <div>
           <h1 className="text-xl font-bold text-[#C29276]">FD Caculator</h1>
@@ -89,7 +89,7 @@ export default function Home() {
         <div className="flex flex-col gap-[20px]">
           <div className="flex justify-between">
             <h2 className="text-xl font-medium text-[#9892A1]">Deposit Amount (₹)</h2>
-            <span className="px-[30px] py-[10px] bg-[#F7F7F5] rounded-4xl text-[#797878]">{DA}</span>
+            <span className="px-[7%] xl:px-[30px] py-[10px] bg-[#F7F7F5] rounded-4xl text-[#797878]">{DA}</span>
           </div>
           <div>
             <Slider value={[DA]} max={5000000} step={100000} min={100000} className="w-full text-red-900" onValueChange={(e) => {
@@ -106,8 +106,8 @@ export default function Home() {
         {/* Rate of return */}
         <div className="flex flex-col gap-[20px]">
           <div className="flex justify-between">
-            <h2 className="text-xl font-medium text-[#9892A1]">Rate of return (%)</h2>
-            <span className="px-[30px] py-[10px] bg-[#F7F7F5] rounded-4xl text-[#797878]">{ROR}</span>
+            <h2 className="text-xl font-medium text-[#9892A1]">Rate Of Return (%)</h2>
+            <span className="px-[7%] xl:px-[30px] py-[10px] bg-[#F7F7F5] rounded-4xl text-[#797878]">{ROR}</span>
           </div>
           <div>
             <Slider defaultValue={[5]} max={30} step={1} min={5} className="w-full text-red-900" onValueChange={(e) => {
@@ -122,12 +122,12 @@ export default function Home() {
         </div>
 
         {/* interest payout */}
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-col xl:flex-row gap-[10px]">
           <div>
             <h2 className="text-xl font-medium text-[#9892A1]">Interst Payout</h2>
             <p className="text-sm font-light text-[#9AA0A3]">Cumulative Rate Of Return is <b className="text-green-600">{ROR}%</b></p>
           </div>
-          <div className="flex gap-[10px] text-sm font-semibold items-center">
+          <div className="flex gap-[10px] text-sm font-semibold items-center text-nowrap flex-wrap">
             {interestPayoutArr.map((ele) => {
               return (<button key={ele.id}
                 className={`cursor-pointer 
@@ -143,8 +143,8 @@ export default function Home() {
         {/* Time period */}
         <div className="flex flex-col gap-[20px]">
           <div className="flex justify-between">
-            <h2 className="text-xl font-medium text-[#9892A1]">Time period (Years)</h2>
-            <span className="px-[30px] py-[10px] bg-[#F7F7F5] rounded-4xl text-[#797878]">{timePeriod}</span>
+            <h2 className="text-xl font-medium text-[#9892A1]">Time Period (Years)</h2>
+            <span className="px-[7%] xl:px-[30px] py-[10px] bg-[#F7F7F5] rounded-4xl text-[#797878]">{timePeriod}</span>
           </div>
           <div>
             <Slider defaultValue={[5]} max={50} step={1} min={1} className="w-full text-red-900" onValueChange={(e) => {
@@ -159,7 +159,7 @@ export default function Home() {
         </div>
 
         {/* Cal button*/}
-        <div className="mt-[20px]">
+        <div>
           <button className="px-[30px] py-[10px] rounded-4xl bg-[#B28F73] text-white hover:bg-[#6D4E3A] cursor-pointer"
             onClick={calMaturityAmount}
           >
@@ -167,15 +167,15 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="h-full w-[50%] bg-[#D0B39B] px-[40px] py-[25px] flex flex-col gap-[50px]">
-        <div className="flex gap-[20%]">
+      <div className="h-auto xl:h-full w-full xl:w-1/2 bg-[#D0B39B] px-[40px] py-[25px] flex flex-col gap-[50px]">
+        <div className="flex gap-[20%] flex-wrap">
           <div>
-            <h2 className="text-lg text-[#EEEDEA] font-medium">Maturity Amount</h2>
-            <span className="text-4xl text-white font-extrabold">₹{MA.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</span>
+            <h2 className="text-base xl:text-lg text-[#EEEDEA] font-medium">Maturity Amount</h2>
+            <span className="text-2xl xl:text-4xl text-white font-extrabold">₹{MA.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</span>
           </div>
           <div>
-            <h2 className="text-lg text-[#EEEDEA] font-medium">Interest Earned</h2>
-            <span className="text-4xl text-white font-extrabold">₹{IE.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</span>
+            <h2 className="text-base xl:text-lg text-[#EEEDEA] font-medium">Interest Earned</h2>
+            <span className="text-2xl xl:text-4xl text-white font-extrabold">₹{IE.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</span>
           </div>
         </div>
         <div>
